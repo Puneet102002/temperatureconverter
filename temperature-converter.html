@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Temperature Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #a91414;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #894e4e;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #e9e9e9;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Temperature Converter</h1>
+    <input type="number" id="temperature" placeholder="Enter temperature">
+    <button onclick="convert()">Convert</button>
+    <div class="result">
+      <p id="convertedTemperature"></p>
+    </div>
+  </div>
+
+  <script>
+    function convert() {
+      var temperatureInput = document.getElementById("temperature").value;
+      var convertedTemperature = document.getElementById("convertedTemperature");
+
+      var celsius = parseFloat(temperatureInput);
+      var fahrenheit = (celsius * 9) / 5 + 32;
+      var kelvin = celsius + 273.15;
+
+      convertedTemperature.innerHTML = "Fahrenheit: " + fahrenheit.toFixed(2) + "°F<br>" +
+                                        "Kelvin: " + kelvin.toFixed(2) + "K";
+    }
+  </script>
+</body>
+</html>
